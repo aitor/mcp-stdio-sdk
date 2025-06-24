@@ -32,6 +32,11 @@ class EchoTool < MCP::Tool
   end
 end
 
+# 01. Create a new dice tool
+# 02. It receives a number param that indicates the type of dice
+# 03. Valid dices have 4, 6, 8, 10, 12, 20 or 100 sides.
+# 04. It returns an error if the dice is unvalid
+# 05. If the dice type is valid it virtually rolls tha dice and returns the response
 
 server = MCP::Server.new(
   name: 'mcp-stdio-sdk',
