@@ -7,6 +7,12 @@ gemfile do
   gem 'mcp', git: 'https://github.com/modelcontextprotocol/ruby-sdk.git'
 end
 
-# 1. Create a new MCP Server
-# 2. Initialize a STDIO Transport
-# 3. Open the transport
+server = MCP::Server.new(
+  name: 'mcp-stdio-sdk',
+  version: '1.0.2',
+  tools: [],
+  prompts: [],
+  resources: []
+)
+transport = MCP::Server::Transports::StdioTransport.new(server)
+transport.open
