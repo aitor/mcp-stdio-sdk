@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'bundler/inline'
+require "bundler/inline"
 
 gemfile do
   source 'https://rubygems.org'
@@ -13,6 +13,12 @@ server = MCP::Server.new(
   tools: [],
   prompts: [],
   resources: []
+  # Add the capability to list changes on tools
 )
+
+# 01. Define a tool named `echo` with an suitable description
+# 02. It receives a string message as input
+# 03. Returns that same message
+
 transport = MCP::Server::Transports::StdioTransport.new(server)
 transport.open
